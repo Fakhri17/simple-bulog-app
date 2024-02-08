@@ -4,7 +4,7 @@
     "slug": "simple-app-bulog",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/bulog.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -19,12 +19,18 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/bulog.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.fakhri17.simpleappbulog"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "817bf9d2-bad4-47b0-a70d-0653fcd60e22"
+      }
     }
   }
 }
