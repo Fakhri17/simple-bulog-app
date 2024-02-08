@@ -1,20 +1,72 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  Linking,
+} from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import QRCodeReaderScreen from './screens/QRCodeReaderScreen';
 
-export default function App() {
+const Stack = createNativeStackNavigator();
+
+function App({ navigation }) {
+  const openGForm = () => {
+    Linking.openURL('https://docs.google.com/forms/d/e/1FAIpQLSeI8_vYyaJgM7SJM4Y9AWfLq-tglWZh6yt7bEXEOJr_L-hV1A/viewform?formkey=dGx0b1ZrTnoyZDgtYXItMWVBdVlQQWc6MQ');
+  };
+
+  const openQRCodeReader = () => {
+    navigation.navigate('QRCodeReader');
+  }
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Image source={require('./assets/logo-perum-bulog.jpg')} style={styles.bottomImage} resizeMode="contain" />
+      <TouchableOpacity style={styles.button} onPress={openGForm}>
+        <Text style={styles.buttonText}>Open Google Form</Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.button} onPress={openQRCodeReader}>
+        <Text style={styles.buttonText}>Open QR Code Reader</Text>
+      </TouchableOpacity>
     </View>
+  );
+}
+
+export default function MainApp() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="App">
+        <Stack.Screen name="App" component={App} />
+        <Stack.Screen name="QRCodeReader" component={QRCodeReaderScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
     justifyContent: 'center',
+    alignItems: 'center',
+  },
+  button: {
+    marginTop: 10,
+    backgroundColor: '#007bff',
+    paddingVertical: 10,
+    paddingHorizontal: 20,
+    borderRadius: 5,
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
+  },
+  bottomImage: {
+    width: '100%',
+    height: undefined,
+    aspectRatio: 1,
   },
 });
