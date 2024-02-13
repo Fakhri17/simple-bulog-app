@@ -4,7 +4,7 @@
     "slug": "simple-app-bulog",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/bulog.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
@@ -19,7 +19,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/icon.png",
+        "foregroundImage": "./assets/bulog.png",
         "backgroundColor": "#ffffff"
       },
       "package": "com.fakhri17.simpleappbulog"

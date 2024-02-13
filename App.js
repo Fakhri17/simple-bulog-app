@@ -15,7 +15,7 @@ const Stack = createNativeStackNavigator();
 
 function App({ navigation }) {
   const openGForm = () => {
-    Linking.openURL('https://docs.google.com/forms/d/e/1FAIpQLSeI8_vYyaJgM7SJM4Y9AWfLq-tglWZh6yt7bEXEOJr_L-hV1A/viewform?formkey=dGx0b1ZrTnoyZDgtYXItMWVBdVlQQWc6MQ');
+    Linking.openURL('https://forms.gle/bcHUGRGTTTHhc5Eb8');
   };
 
   const openQRCodeReader = () => {
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 24,
   },
   bottomImage: {
     width: '100%',
